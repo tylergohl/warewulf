@@ -1,7 +1,7 @@
 FROM opensuse/tumbleweed:latest AS builder
 
 RUN zypper  -n install --no-recommends git go1.25 unzip &&\
-  zypper -n install -t pattern devel_basis
+  zypper -n install --force-resolution -t pattern devel_basis
 
 # now build the warewulf
 COPY . /warewulf-src
